@@ -22,7 +22,10 @@ app.layout = html.Div(children=[
     # Task 1: Dropdown for Launch Site selection
     dcc.Dropdown(
         id='site-dropdown',
-        options=[{'label': site, 'value': site} for site in spacex_df['Launch Site'].unique()],
+        options=[
+            {'label': 'All Sites', 'value': 'ALL'},  # Added 'All Sites' option
+            {'label': site, 'value': site} for site in spacex_df['Launch Site'].unique()
+        ],
         value='ALL',
         placeholder="Select a Launch Site here",
         searchable=True
